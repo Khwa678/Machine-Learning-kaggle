@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boston House Price Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input { margin: 5px 0; padding: 5px; width: 200px; }
+        .prediction { margin-top: 20px; font-size: 1.2em; color: green; }
+    </style>
+</head>
+<body>
+    <h1>Boston House Price Prediction System</h1>
+    <form action="{{ url_for('predict') }}" method="post">
+        <input type="text" name="CRIM" placeholder="CRIM" required><br>
+        <input type="text" name="ZN" placeholder="ZN" required><br>
+        <input type="text" name="INDUS" placeholder="INDUS" required><br>
+        <input type="text" name="CHAS" placeholder="CHAS" required><br>
+        <input type="text" name="NOX" placeholder="NOX" required><br>
+        <input type="text" name="RM" placeholder="RM" required><br>
+        <input type="text" name="AGE" placeholder="AGE" required><br>
+        <input type="text" name="DIS" placeholder="DIS" required><br>
+        <input type="text" name="RAD" placeholder="RAD" required><br>
+        <input type="text" name="TAX" placeholder="TAX" required><br>
+        <input type="text" name="PTRATIO" placeholder="PTRATIO" required><br>
+        <input type="text" name="B" placeholder="B" required><br>
+        <input type="text" name="LSTAT" placeholder="LSTAT" required><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    <div class="prediction">
+        {{ prediction_text }}
+    </div>
+</body>
+</html>
